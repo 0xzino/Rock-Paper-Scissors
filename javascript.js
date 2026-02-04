@@ -30,45 +30,16 @@ function playRound(humanChoice, computerChoice) {
     if ((humChoice == "rock" && comChoice == "scissors") ||
         (humChoice == "paper" && comChoice == "rock") ||
         (humChoice == "scissors" && comChoice == "paper")){
-            resultsDiv.textContent = `You win! ${humChoice} beats ${comChoice}`;
             humanScore++;
+            resultsDiv.textContent = `You win! ${humChoice} beats ${comChoice}! \n Human: ${humanScore} Computer: ${computerScore}`;
         } 
         
         else if (humChoice == comChoice){
-            resultsDiv.textContent = "It's a tie!";
+            resultsDiv.textContent = `It's a tie! \n Human: ${humanScore} Computer: ${computerScore}`;
         }
 
         else {
-            resultsDiv.textContent = `You lose! ${comChoice} beats ${humChoice}`;
             computerScore++;
+            resultsDiv.textContent = `You lose! ${comChoice} beats ${humChoice}! \n Human: ${humanScore} Computer: ${computerScore}`;
         }
 }
-
-function playGame() {
-    /*
-    playRound(gethumanChoice(), getcomputerChoice());
-    console.log(`Human: ${humanScore} Computer: ${computerScore}`);
-    playRound(gethumanChoice(), getcomputerChoice());
-    console.log(`Human: ${humanScore} Computer: ${computerScore}`);   
-    playRound(gethumanChoice(), getcomputerChoice());
-    console.log(`Human: ${humanScore} Computer: ${computerScore}`);  
-    playRound(gethumanChoice(), getcomputerChoice());
-    console.log(`Human: ${humanScore} Computer: ${computerScore}`);  
-    playRound(gethumanChoice(), getcomputerChoice());
-    console.log(`Human: ${humanScore} Computer: ${computerScore}`);
-    */
-
-    if (humanScore > computerScore){
-        resultsDiv.textContent = `You win!`
-    }
-
-    if (humanScore < computerScore){
-        resultsDiv.textContent = `You lose!`
-    }
-
-    if (humanScore == computerScore){
-        resultsDiv.textContent = `It's a tie!`
-    }
-}
-
-playGame();
