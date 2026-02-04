@@ -7,6 +7,8 @@ const rockButton = document.getElementById("btn-rock");
 const paperButton = document.getElementById("btn-paper");
 const scissorsButton = document.getElementById("btn-scissors");
 
+const resultsDiv = document.getElementById("results");
+
 rockButton.addEventListener("click", () => playRound("rock", getcomputerChoice()));
 paperButton.addEventListener("click", () => playRound("paper", getcomputerChoice()));
 scissorsButton.addEventListener("click", () => playRound("scissors", getcomputerChoice()));
@@ -28,16 +30,16 @@ function playRound(humanChoice, computerChoice) {
     if ((humChoice == "rock" && comChoice == "scissors") ||
         (humChoice == "paper" && comChoice == "rock") ||
         (humChoice == "scissors" && comChoice == "paper")){
-            console.log(`You win! ${humChoice} beats ${comChoice}`);
+            resultsDiv.textContent = `You win! ${humChoice} beats ${comChoice}`;
             humanScore++;
         } 
         
         else if (humChoice == comChoice){
-            console.log("It's a tie!");
+            resultsDiv.textContent = "It's a tie!";
         }
 
         else {
-            console.log(`You lose! ${comChoice} beats ${humChoice}`);
+            resultsDiv.textContent = `You lose! ${comChoice} beats ${humChoice}`;
             computerScore++;
         }
 }
@@ -57,15 +59,15 @@ function playGame() {
     */
 
     if (humanScore > computerScore){
-        console.log(`You win!`)
+        resultsDiv.textContent = `You win!`
     }
 
     if (humanScore < computerScore){
-        console.log(`You lose!`)
+        resultsDiv.textContent = `You lose!`
     }
 
     if (humanScore == computerScore){
-        console.log(`It's a tie!`)
+        resultsDiv.textContent = `It's a tie!`
     }
 }
 
