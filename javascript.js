@@ -2,6 +2,15 @@ const choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
+
+const rockButton = document.getElementById("btn-rock");
+const paperButton = document.getElementById("btn-paper");
+const scissorsButton = document.getElementById("btn-scissors");
+
+rockButton.addEventListener("click", () => playRound("rock", getcomputerChoice()));
+paperButton.addEventListener("click", () => playRound("paper", getcomputerChoice()));
+scissorsButton.addEventListener("click", () => playRound("scissors", getcomputerChoice()));
+
 function getcomputerChoice() { // Randomly selects rock, paper, or scissors
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
